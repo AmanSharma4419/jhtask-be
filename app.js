@@ -14,12 +14,7 @@ dbConnection(process.env.DB_URL).then((res) => {
 });
 
 // Middlewares
-const corsOptions = {
-  origin: "https://jhtask-fe-amansharma4419.vercel.app",
-  credentials: true,
-};
-
-app.use(cors(corsOptions));
+app.use(cors({ origin: "*", credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("./public"));
