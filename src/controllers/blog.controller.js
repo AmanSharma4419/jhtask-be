@@ -6,7 +6,7 @@ const createBlog = async (req, res, next) => {
     const { title, text, subTitle } = req.body;
     if (!title) {
       return res
-        .status()
+        .status(400)
         .json({ success: false, message: errorMessages.TITLE_REQURIED });
     }
     const blogInfo = {
